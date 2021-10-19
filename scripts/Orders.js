@@ -1,38 +1,37 @@
 import { addCustomOrder, getOrders, getMetals, getStyles, getSizes } from "./database.js"
 
 
-const metalArray = getMetal()
-const foundMetal = metalArray.find(
-    (metal) => {
-        return metal.id === order.metalId
-    }
-)
-
-const stylesArray = getStyles()
-const foundStyle = stylesArray.find(
-    (style) => {
-        return style.id === orderArray.styleId
-    }
-)
-
-const sizesArray = getSizes()
-const foundSize = sizesArray.find(
-    (size) => {
-        return size.id === order.sizeId
-    }
-)
-
-
-const totalCost = foundMetal.price + foundStyle.price + foundSize.price
-
-const costString = totalCost.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD"
-})
 
 
 
 const buildOrderListItem = (order) => {
+    const metalArray = getMetals()
+    const foundMetal = metalArray.find(
+        (metal) => {
+            return metal.id === order.metalId
+        }
+    )
+
+    const stylesArray = getStyles()
+    const foundStyle = stylesArray.find(
+        (style) => {
+            return style.id === order.styleId
+        }
+    )
+
+    const sizesArray = getSizes()
+    const foundSize = sizesArray.find(
+        (size) => {
+            return size.id === order.sizeId
+        }
+    )
+
+    const totalCost = foundMetal.price + foundStyle.price + foundSize.price
+
+    const costString = totalCost.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
     return `<li>
         Order #${order.id} costs ${costString}
         </li>`
