@@ -1,8 +1,8 @@
 
+import { Metals } from "./Metals.js"
 import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
-import { Metals } from "./Metals.js"
 
 
 document.addEventListener(

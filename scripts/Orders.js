@@ -1,8 +1,8 @@
 import { addCustomOrder, getOrders, getMetals, getStyles, getSizes } from "./database.js"
 
 
-const metals = getMetals()
-const foundMetal = metals.find(
+const metalArray = getMetal()
+const foundMetal = metalArray.find(
     (metal) => {
         return metal.id === order.metalId
     }
@@ -11,7 +11,7 @@ const foundMetal = metals.find(
 const stylesArray = getStyles()
 const foundStyle = stylesArray.find(
     (style) => {
-        return style.id === order.styleId
+        return style.id === orderArray.styleId
     }
 )
 
