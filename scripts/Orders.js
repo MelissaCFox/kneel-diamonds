@@ -1,4 +1,5 @@
 import { addCustomOrder, getOrders, getMetals, getStyles, getSizes, getJewelryTypes } from "./database.js"
+import { jewelryTypes } from "./JewelryTypes.js"
 
 
 

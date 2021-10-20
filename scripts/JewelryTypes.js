@@ -1,6 +1,5 @@
-import { getJewelryTypes, setJewelryType } from "./database.js"
+import { getJewelryTypes, getOrderBuilder, setJewelryType } from "./database.js"
 
-const types = getJewelryTypes()
 
 document.addEventListener(
     "change",
@@ -10,14 +9,21 @@ document.addEventListener(
             setJewelryType(parseInt(event.target.value))
         }
     }
-)
-
+    )
+    
 export const jewelryTypes = () => {
+    const types = getJewelryTypes()
+    const orderBuilder = getOrderBuilder()
     let html = "<ul>"
 
     const listItems = types.map(type => {
+        if (orderBuilder.jewelryTypeId === type.id) {
+            return `<li>
+            <input type="radio" name="jewelryType" value="${type.id}" checked="checked"/>${type.type}
+            </li>`
+        } else
         return `<li>
-            <input type="radio" name="jewelryType" value="${type.id}"/> ${type.type}
+            <input type="radio" name="jewelryType" value="${type.id}"/>${type.type}
         </li>`
     })
 

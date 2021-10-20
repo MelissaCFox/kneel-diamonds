@@ -1,6 +1,5 @@
-import { getSizes, setSize } from "./database.js"
+import { getOrderBuilder, getSizes, setSize } from "./database.js"
 
-const sizes = getSizes()
 
 document.addEventListener(
     "change",
@@ -10,13 +9,19 @@ document.addEventListener(
             setSize(parseInt(event.target.value))
         }
     }
-)
-
+    )
+    
 export const DiamondSizes = () => {
+    const orderBuilder = getOrderBuilder()
+    const sizes = getSizes()
     let html = "<ul>"
 
-    // Use .map() for converting objects to <li> elements
     const listItems = sizes.map(size => {
+        if (orderBuilder.sizeId === size.id) {
+            return `<li>
+            <input type="radio" name="size" value="${size.id}" checked="checked"/>${size.carets}
+            </li>`
+        } else
         return `<li>
             <input type="radio" name="size" value="${size.id}" /> ${size.carets}
         </li>`
