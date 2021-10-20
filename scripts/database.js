@@ -27,6 +27,23 @@ const database = {
         { id: 4, metal: "Platinum", price: 795.45 },
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
+    jewelryType: [
+        {
+            id: 1,
+            type: "Ring",
+            priceMultiplier: 1
+        },
+        {
+            id: 2,
+            type: "Earring",
+            priceMultiplier: 2
+        },
+        {
+            id: 3,
+            type: "Necklace",
+            priceMultiplier: 4
+        }
+    ],
     customOrders: [
         {
             id: 1,
