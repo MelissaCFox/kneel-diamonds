@@ -27,7 +27,7 @@ const database = {
         { id: 4, metal: "Platinum", price: 795.45 },
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
-    jewelryType: [
+    jewelryTypes: [
         {
             id: 1,
             type: "Ring",
@@ -50,7 +50,8 @@ const database = {
             metalId: 3,
             sizeId: 2,
             styleId: 3,
-            timestamp: 1614659931693
+            timestamp: 1614659931693,
+            jewelryTypeId: 1
         }
     ],
     orderBuilder: {}
@@ -68,6 +69,11 @@ export const getStyles = () => {
     return database.styles.map(styles => ({...styles}))
 }
 
+export const getJewelryTypes = () => {
+    return database.jewelryTypes.map(type => ({...type}))
+}
+
+
 export const getOrders = () => {
     return database.customOrders.map(customOrders => ({...customOrders}))
 }
@@ -82,6 +88,10 @@ export const setSize = (id) => {
 
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+
+export const setJewelryType = (id) => {
+    database.orderBuilder.jewelryTypeId = id
 }
 
 export const addCustomOrder = () => {

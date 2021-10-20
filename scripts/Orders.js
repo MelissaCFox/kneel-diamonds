@@ -1,6 +1,4 @@
-import { addCustomOrder, getOrders, getMetals, getStyles, getSizes } from "./database.js"
-
-
+import { addCustomOrder, getOrders, getMetals, getStyles, getSizes, getJewelryTypes } from "./database.js"
 
 
 
@@ -26,7 +24,16 @@ const buildOrderListItem = (order) => {
         }
     )
 
-    const totalCost = foundMetal.price + foundStyle.price + foundSize.price
+    const typesArray = getJewelryTypes()
+    const foundType = typesArray.find(
+        (type) => {
+            return type.id === order.jewelryTypeId
+        }
+    )
+
+    const initialCost = foundMetal.price + foundStyle.price + foundSize.price
+
+    const totalCost = initialCost * foundType.priceMultiplier
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",

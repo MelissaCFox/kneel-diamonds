@@ -3,6 +3,7 @@ import { Metals } from "./Metals.js"
 import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
+import { jewelryTypes } from "./JewelryTypes.js"
 
 
 
@@ -12,6 +13,10 @@ export const KneelDiamonds = () => {
         <h1>Kneel Diamonds</h1>
 
         <article class="choices">
+            <section class="choices__types options">
+                <h2>Jewelry Type</h2>
+                ${jewelryTypes()}
+            </section>
             <section class="choices__metals options">
                 <h2>Metals</h2>
                 ${Metals()}
