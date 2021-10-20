@@ -1,4 +1,4 @@
-import { getJewelryTypes, getOrderBuilder, setJewelryType } from "./database.js"
+import { getJewelryTypes, getOrderBuilder, setJewelryType } from "./dataAccess.js"
 
 
 document.addEventListener(

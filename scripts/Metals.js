@@ -1,4 +1,4 @@
-import { getMetals, getOrderBuilder, setMetal } from "./database.js"
+import { getOrderBuilder, getMetals, setMetal } from "./dataAccess.js"
 
 
 document.addEventListener(
