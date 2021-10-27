@@ -15,7 +15,7 @@ export const KneelDiamonds = () => {
         <article class="choices">
             <section class="choices__types options">
                 <h2>Jewelry Type</h2>
-                ${jewelryTypes()}
+                ${jewelryTypes()}   
             </section>
             <section class="choices__metals options">
                 <h2>Metals</h2>
